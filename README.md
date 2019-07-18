@@ -1,24 +1,47 @@
-# README
+# Sweety
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sweety is a simple web application which enables a user to input and 
+track blood glucose readings and view reports on those readings.
 
-Things you may want to cover:
+### Users
 
-* Ruby version
+The typical user of the Sweety application is a diabetes patient who is 
+checking his or her blood glucose levels several times a day. These 
+individuals are looking for a method to keep track of their readings 
+on a daily basis and examine monthly trends.
 
-* System dependencies
+In the future, doctors may also have access to this application to 
+review patient entered blood glucose levels and review the same daily 
+and monthly data.
 
-* Configuration
+### Functionality
 
-* Database creation
+The applications functionality relates to two core features: entering 
+blood glucose level readings and view reports on those readings.
 
-* Database initialization
+### Data Entry
+A user should be able to enter data up to four times per day. Data is 
+entered as a single integer value representing blood glucose levels 
+(measured in mg/dl). Data should be validated to ensure that a level is 
+included in the entry and that there are no more than 4 entries on a given day.
 
-* How to run the test suite
+### Data entry
+4x a day
 
-* Services (job queues, cache servers, search engines, etc.)
+### Reports
 
-* Deployment instructions
+A user should be able to view reports of their data. There are three 
+kinds of reports: daily report, month to date report, and monthly 
+report. With a date selector, the user should be able to select the 
+end date of the report. For daily reports, data will represent entries 
+from that day. For month to date reports, data will start on the first 
+of the month for the selected date and end on that date. For monthly 
+reports, reports will include data spanning the month the previous monthly period.
 
-* ...
+Reports should include three data points: a maximum reading from the time 
+period, a minimum reading for the time period, and an average of the whole 
+data set for the period.
+
+### Technology
+
+Rails, MySQL, and Bootstrap. Testing with Rspec and Capybara.
