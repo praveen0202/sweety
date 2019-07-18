@@ -1,42 +1,49 @@
 <div>
-  <div class="title-wrap">
-    <label class="report-field">Maximum reading:</label>
-    <label class="report-field">Minimum reading:</label>
-    <label class="report-field">Average reading:</label>
-  </div>
-  <div class="value-wrap">
-    <label class="report-field-value" id="max_reading"><%= max_reading %></label>
-    <label class="report-field-value" id="min_reading"><%= min_reading %></label>
-    <label class="report-field-value" id="average_reading"><%= average_reading %></label>
-  </div>
-  <div class="report-filter">
-    <%= form_tag("/search", method: "get") do %>
-      <div class="form-group">
-        <label for="sel1">Filter:</label>
-        <select class="form-control" id="sel1" name="report_type" value="<%= params[:report_type] %>" required>
-          <option value="1">Daily report</option>
-          <option value="2">Month to date report</option>
-          <option value="3">Monthly report</option>
-        </select>
-        <div class="row">
-          <div class="col-sm-12">
-            <input type="text" class="form-control datetimepicker-input" id="datetimepicker5" autocomplete="off" name="selected_date"
-                   data-toggle="datetimepicker" data-target="#datetimepicker5" required/>
-          </div>
-          <script type="text/javascript">
-              $(function () {
-                  $('#datetimepicker5').datetimepicker({
-                      format: "YYYY-MM-DD",
-                      defaultDate: "<%= params[:selected_date] ? params[:selected_date].strftime("%Y-%m-%d") : '' %>"
-                  });
-              });
-          </script>
-        </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="title-wrap">
+        <label class="report-field">Maximum:</label>
+        <label class="report-field">Minimum:</label>
+        <label class="report-field">Average:</label>
       </div>
-      <%= submit_tag("Filter", class: "btn-sm btn-success") %>
-    <% end %>
+      <div class="value-wrap">
+        <label class="report-field-value" id="max_reading"><%= max_reading %></label>
+        <label class="report-field-value" id="min_reading"><%= min_reading %></label>
+        <label class="report-field-value" id="average_reading"><%= average_reading %></label>
+      </div><br/>
+      <%= link_to "Add glucose level", new_blood_glucose_levels_url, class: "btn btn-success", remote: true %>
+    </div>
+    <div class="col-6">
+      <div class="report-filter">
+        <%= form_tag("/search", method: "get") do %>
+          <div class="form-group">
+            <label for="sel1">Filter:</label>
+            <select class="form-control" id="sel1" name="report_type" value="<%= params[:report_type] %>" required>
+              <option value="1">Daily report</option>
+              <option value="2">Month to date report</option>
+              <option value="3">Monthly report</option>
+            </select>
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" class="form-control datetimepicker-input" id="datetimepicker5" autocomplete="off" name="selected_date"
+                       data-toggle="datetimepicker" data-target="#datetimepicker5" required/>
+              </div>
+              <script type="text/javascript">
+                  $(function () {
+                      $('#datetimepicker5').datetimepicker({
+                          format: "YYYY-MM-DD",
+                          defaultDate: "<%= params[:selected_date] ? params[:selected_date].strftime("%Y-%m-%d") : '' %>"
+                      });
+                  });
+              </script>
+            </div>
+          </div>
+          <%= submit_tag("Filter", class: "btn-sm btn-success") %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <br/><%= link_to "Add glucose level", new_blood_glucose_levels_url, class: "btn btn-success", remote: true %>
+  <br/>
 </div>
 <br/>
 <div id="glucose-level-tables">
