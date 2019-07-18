@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Date & time</th>
+    <th>Glucose level</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% blood_glucose_levels.each do |bgl| %>
+    <tr>
+      <td><%= bgl.reading_time.strftime("%Y-%m-%d %I:%M %p") %></td>
+      <td><%= bgl.glucose_level %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

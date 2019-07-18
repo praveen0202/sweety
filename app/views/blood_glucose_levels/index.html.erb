@@ -1,0 +1,47 @@
+<h2>Blood glucose levels</h2>
+<br/>
+<%= render 'report', blood_glucose_levels: @blood_glucose_levels, max_reading: @max_reading,
+           min_reading: @min_reading, average_reading: @average_reading %>
+
+<div class="modal fade" id="formModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add blood glucose level</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="successModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Success</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Blood glucose level is recorded.
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>

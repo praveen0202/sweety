@@ -1,0 +1,20 @@
+<%= simple_form_for(blood_glucose_level, remote: true, html: { class: 'form-inline' }) do |f| %>
+  <div class="form-group integer required blood_glucose_level_reading_time <%= blood_glucose_level.errors[:reading_time].empty? ? '' :' form-group-invalid'%>">
+    <label class="form-control-label integer required" for="blood_glucose_level_reading_time">Reading time <abbr title="required">*</abbr></label>
+    <input type="text" class="form-control datetimepicker-input <%= blood_glucose_level.errors[:reading_time].empty? ? '' : ' is-invalid'%>" id="datetimepicker2" autocomplete="off"
+           name="blood_glucose_level[reading_time]"
+           data-toggle="datetimepicker" data-target="#datetimepicker2" autocomplete="off" required/>
+    <div class="invalid-feedback"><%= blood_glucose_level.errors[:reading_time].join(", ") %></div>
+  </div>
+  <br/>
+  <%= f.input :glucose_level %><br/><br/><br/>
+  <%= f.button :submit, class: "btn btn-success" %>
+<% end %>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker2').datetimepicker({
+            format: "YYYY-MM-DD HH:mm A",
+            defaultDate: "<%= blood_glucose_level.reading_time.strftime("%Y-%m-%d %I:%M %p") %>"
+        });
+    });
+</script>

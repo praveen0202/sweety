@@ -1,0 +1,3 @@
+RSpec.describe BloodGlucoseLevelsController do
+
+end

@@ -1,0 +1,12 @@
+<% if @blood_glucose_level.errors.empty? %>
+  $('#formModal .modal-body').html('')
+  $('#formModal').modal('hide');
+  $('#glucose-level-tables').html("<%= escape_javascript(render('table', blood_glucose_levels: @blood_glucose_levels)) %>");
+  $('#max_reading').text("<%= @max_reading %>");
+  $('#min_reading').text("<%= @min_reading %>");
+  $('#average_reading').text("<%= @average_reading %>");
+  $("#successModal").modal("show");
+<% else %>
+  $('#formModal .modal-body').html("<%= escape_javascript(render('form', blood_glucose_level: @blood_glucose_level)) %>");
+  $('#formModal').modal('show');
+<% end %>

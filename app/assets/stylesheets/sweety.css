@@ -1,0 +1,112 @@
+body{
+    background-color: #f5eaea !important;
+    /*overflow: hidden;*/
+}
+
+.field_with_errors {
+    width: 100%;
+    border: 1px solid red;
+    border-radius: 4px;
+}
+
+.field input {
+    border-radius: 0.25rem;
+}
+
+.fixed-header, .fixed-footer{
+    width: 100%;
+    background: #bb0a1e;
+    border-color: #bb0a1e;
+    border-radius: 0px;
+    padding: 10px 0;
+    color: #fff !important;
+    z-index: 3;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #844931;
+}
+
+.container-fluid > .navbar-header {
+    margin-left: 0px !important;
+}
+
+.fixed-header .navbar-brand {
+    margin-top: 3px;
+    margin-left: 0px !important;
+    padding: 0px;
+    font-size: 2.25rem;
+}
+
+.fixed-header .navbar-brand img {
+    width: 150px;
+}
+
+.fixed-header{
+    top: 0;
+}
+.fixed-footer{
+    bottom: 0;
+    position: fixed;
+}
+
+.fixed-footer a {
+    color: white;
+    cursor: pointer;
+}
+.container{
+    width: 95%;
+    margin: 0 auto; /* Center the DIV horizontally */
+}
+
+.logout, .logout:hover {
+    float: right;
+    margin-top: 7px;
+    color: white;
+}
+
+.add-entry {
+    min-height: 100px;
+    background-color: orange;
+}
+
+.report-field {
+    font-weight: bold;
+}
+
+.report-field {
+    display:block;
+    width: auto;
+}
+
+.title-wrap{
+    display:inline-block;
+}
+
+.report-field-value {
+    display:block;
+}
+
+.value-wrap {
+    display:inline-block;
+}
+
+.report-filter {
+    display:inline-block;
+    float: right;
+}
+
+.form-actions {
+    float: right;
+}
+
+@media (max-width: 430px) {
+    #displayArea {
+        margin-bottom: 10px;
+    }
+}
