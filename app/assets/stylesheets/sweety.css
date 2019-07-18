@@ -105,6 +105,10 @@ body{
     float: right;
 }
 
+.footer-web-link {
+    margin-left: 15px;
+}
+
 @media (max-width: 430px) {
     #displayArea {
         margin-bottom: 10px;
