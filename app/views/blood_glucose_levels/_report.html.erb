@@ -43,7 +43,7 @@
 </div>
 <script type="text/javascript">
     $(function () {
-        $('#sel1').val("<%= params[:report_type] %>");
+        $('#sel1').val("<%= params[:report_type] || '1' %>");
         $('#datetimepicker5').datetimepicker({
             format: "YYYY-MM-DD",
             defaultDate: "<%= params[:selected_date] %>"
