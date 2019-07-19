@@ -1,7 +1,7 @@
 class BloodGlucoseLevelsController < ApplicationController
 
   def index
-    @blood_glucose_levels = BloodGlucoseLevel.filter(params)
+    @blood_glucose_levels = BloodGlucoseLevel.filter(params, current_user)
     reading_minmax
   end
 
@@ -11,8 +11,9 @@ class BloodGlucoseLevelsController < ApplicationController
 
   def create
     @blood_glucose_level = BloodGlucoseLevel.new(blood_glucose_level_params)
+    @blood_glucose_level.user = current_user
     if @blood_glucose_level.save
-      @blood_glucose_levels = BloodGlucoseLevel.where("reading_time >= ?", Date.current)
+      @blood_glucose_levels = current_user.blood_glucose_levels.where("reading_time >= ?", Date.current)
       reading_minmax
     end
   end
