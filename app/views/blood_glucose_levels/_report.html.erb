@@ -43,10 +43,13 @@
 </div>
 <script type="text/javascript">
     $(function () {
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
         $('#sel1').val("<%= params[:report_type] || '1' %>");
         $('#datetimepicker5').datetimepicker({
             format: "YYYY-MM-DD",
-            defaultDate: "<%= params[:selected_date] %>"
+            maxDate: moment(),
+            defaultDate: "<%= params[:selected_date] %>" || date
         });
     });
 </script>
