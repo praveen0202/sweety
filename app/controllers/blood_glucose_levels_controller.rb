@@ -19,9 +19,10 @@ class BloodGlucoseLevelsController < ApplicationController
   end
 
   def reading_minmax
+    return if @blood_glucose_levels.empty?
     glucose_levels = @blood_glucose_levels.map(&:glucose_level)
     @min_reading, @max_reading = glucose_levels.minmax
-    @average_reading = glucose_levels.count == 0 ? '' : glucose_levels.sum/glucose_levels.count
+    @average_reading = glucose_levels.sum/glucose_levels.count
   end
 
   private

@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   before_create :set_default_role
 
+  has_many :blood_glucose_levels
+
   private
 
   def set_default_role
